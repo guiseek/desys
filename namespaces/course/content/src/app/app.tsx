@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import { Route, Link } from 'react-router-dom';
-import { loop } from '@desys/custom-core';
+import { Button } from '@desys/react-components';
 
 const StyledApp = styled.div`
   // Your style here
@@ -13,14 +13,6 @@ const StyledApp = styled.div`
 `;
 
 export function App() {
-  const looper = loop(1, 5);
-
-  let count = 0
-  looper.run(() => {
-    count++
-    console.log(count);
-  })
-
   return (
     <StyledApp>
       {/* START: routes */}
@@ -38,6 +30,10 @@ export function App() {
             <Link to="/page-2">Page 2</Link>
           </li>
         </ul>
+
+        <Button>Hey</Button>
+        <button is="ds-btn">Ho</button>
+        <button is="ds-btn">Lets Go</button>
       </div>
       <Route
         path="/"

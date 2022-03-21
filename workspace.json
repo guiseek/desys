@@ -3,6 +3,8 @@
   "projects": {
     "course-content": "namespaces/course/content",
     "course-content-e2e": "namespaces/course/content-e2e",
-    "shared-ui-custom-core": "packages/shared/ui/custom/core"
+    "shared-ui-custom-core": "packages/shared/ui/custom/core",
+    "shared-ui-custom-elements": "packages/shared/ui/custom/elements",
+    "shared-ui-react-components": "packages/shared/ui/react/components"
   }
 }

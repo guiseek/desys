@@ -1,40 +1,48 @@
-import BoundTemplate from './template/bound'
-import { noop } from './noop'
+import BoundTemplate from './template/bound';
+import { noop } from './noop';
 
 export type CustomOptions<T> = {
-  name: string
-  html?: HTMLTemplateElement
-  style?: HTMLStyleElement
-  mode?: ShadowRootInit['mode']
-  handler?: (element: T) => void
-}
+  name: `${string}-${string}`;
+  html?: HTMLTemplateElement;
+  style?: HTMLStyleElement;
+  mode?: ShadowRootInit['mode'];
+  extends?: keyof HTMLElementTagNameMap;
+  handler?: (element: T) => void;
+};
 
 export function Custom<T>(options: CustomOptions<T>) {
-  const { name, html, style, mode = 'open' } = options
+  const { name, html, style, mode = 'open' } = options;
   return function <T extends CustomElementConstructor>(target: T) {
-    const connected = target.prototype.connectedCallback ?? noop
+    const connected = target.prototype.connectedCallback ?? noop;
 
     target.prototype.connectedCallback = function () {
-      const shadow: ShadowRoot = this.attachShadow({ mode })
-      if (style) shadow.appendChild(style)
+      let shadow: ShadowRoot | HTMLElement = !options.extends
+        ? (this.attachShadow({ mode }) as ShadowRoot)
+        : (this as HTMLElement);
+
+      if (style) shadow.appendChild(style);
 
       if (html) {
-        const bound = new BoundTemplate(html)
-        const [instance, bindings] = bound.create(this)
+        const bound = new BoundTemplate(html);
+        const [instance, bindings] = bound.create(this);
 
         target.prototype.bind = (data: T) => {
-          bindings.setData(data)
-        }
+          bindings.setData(data);
+        };
         target.prototype.swap = (name: string, value: any) => {
-          bindings.set(name, value)
-        }
+          bindings.set(name, value);
+        };
 
-        shadow.appendChild(instance)
+        shadow.appendChild(instance);
       }
 
-      connected.call(this)
-    }
+      connected.call(this);
+    };
 
-    customElements.define(name, target)
-  }
+    if (options.extends) {
+      customElements.define(name, target, { extends: options.extends });
+    } else {
+      customElements.define(name, target);
+    }
+  };
 }

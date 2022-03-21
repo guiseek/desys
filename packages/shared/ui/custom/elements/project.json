@@ -1,0 +1,23 @@
+{
+  "root": "packages/shared/ui/custom/elements",
+  "sourceRoot": "packages/shared/ui/custom/elements/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/shared/ui/custom/elements/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/shared/ui/custom/elements"],
+      "options": {
+        "jestConfig": "packages/shared/ui/custom/elements/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:ui", "scope:shared"]
+}

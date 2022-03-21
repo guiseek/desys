@@ -13,13 +13,13 @@
 - [ ] Styles
 
 #### Shared / Ui / Web
-- [ ] Custom Core
-- [ ] Custom Elements
+- [x] Custom Core
+- [x] Custom Elements
 
 
 #### Shared / Ui / React
 - [ ] React Core
-- [ ] React Components
+- [x] React Components
 
 
 ---
