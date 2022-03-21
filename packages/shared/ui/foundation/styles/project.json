@@ -10,7 +10,7 @@
         "outputPath": "dist/packages/shared/ui/foundation/styles",
         "main": "packages/shared/ui/foundation/styles/src/index.ts",
         "tsConfig": "packages/shared/ui/foundation/styles/tsconfig.lib.json",
-        "assets": ["packages/shared/ui/foundation/styles/*.md"]
+        "assets": ["packages/shared/ui/foundation/styles/*.md", "packages/shared/ui/foundation/styles/**/*.css"]
       }
     },
     "lint": {
@@ -26,6 +26,14 @@
       "options": {
         "jestConfig": "packages/shared/ui/foundation/styles/jest.config.js",
         "passWithNoTests": true
+      }
+    },
+    "compile": {
+      "executor": "@nrwl/workspace:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npx sass ./scss/desys.scss ./css/desys.css",
+        "cwd": "packages/shared/ui/foundation/styles/src"
       }
     }
   },
