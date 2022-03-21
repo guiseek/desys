@@ -1,13 +1,13 @@
 import { Custom } from "@desys/custom-core";
 
-let INC = 0
+let inc = 0
 
 @Custom({
   name: 'ds-btn',
   extends: 'button'
 })
 export class Button extends HTMLButtonElement {
-  bid = INC++
+  bid = inc++
 
   connectedCallback() {
     console.log(`Button ${this.bid} connected`);

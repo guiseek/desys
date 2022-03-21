@@ -1,0 +1,33 @@
+{
+  "root": "packages/shared/ui/foundation/styles",
+  "sourceRoot": "packages/shared/ui/foundation/styles/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/shared/ui/foundation/styles",
+        "main": "packages/shared/ui/foundation/styles/src/index.ts",
+        "tsConfig": "packages/shared/ui/foundation/styles/tsconfig.lib.json",
+        "assets": ["packages/shared/ui/foundation/styles/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/shared/ui/foundation/styles/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/shared/ui/foundation/styles"],
+      "options": {
+        "jestConfig": "packages/shared/ui/foundation/styles/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:ui", "scope:shared"]
+}

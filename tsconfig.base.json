@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@desys/custom-core": ["packages/shared/ui/custom/core/src/index.ts"],
+      "@desys/foundation-styles": [
+        "packages/shared/ui/foundation/styles/src/index.ts"
+      ],
       "@desys/react-components": [
         "packages/shared/ui/react/components/src/index.ts"
       ],

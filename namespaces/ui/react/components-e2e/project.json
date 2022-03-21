@@ -1,0 +1,28 @@
+{
+  "root": "namespaces/ui/react/components-e2e",
+  "sourceRoot": "namespaces/ui/react/components-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "namespaces/ui/react/components-e2e/cypress.json",
+        "devServerTarget": "shared-ui-react-components:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "shared-ui-react-components:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["namespaces/ui/react/components-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["shared-ui-react-components"]
+}
