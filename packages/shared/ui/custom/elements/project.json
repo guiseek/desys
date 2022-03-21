@@ -3,6 +3,16 @@
   "sourceRoot": "packages/shared/ui/custom/elements/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/shared/ui/custom/elements",
+        "main": "packages/shared/ui/custom/elements/src/index.ts",
+        "tsConfig": "packages/shared/ui/custom/elements/tsconfig.lib.json",
+        "assets": ["packages/shared/ui/custom/elements/*.md"]
+      }
+    },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "outputs": ["{options.outputFile}"],

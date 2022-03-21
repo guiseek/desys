@@ -1,3 +1,3 @@
-import '@desys/shared/ui/custom/elements';
+import '@desys/custom-elements';
 
 export * from './lib/button/button';

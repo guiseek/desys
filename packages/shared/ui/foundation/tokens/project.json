@@ -1,0 +1,33 @@
+{
+  "root": "packages/shared/ui/foundation/tokens",
+  "sourceRoot": "packages/shared/ui/foundation/tokens/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/shared/ui/foundation/tokens",
+        "main": "packages/shared/ui/foundation/tokens/src/index.ts",
+        "tsConfig": "packages/shared/ui/foundation/tokens/tsconfig.lib.json",
+        "assets": ["packages/shared/ui/foundation/tokens/*.md", "packages/shared/ui/foundation/tokens/**/*.css"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/shared/ui/foundation/tokens/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/shared/ui/foundation/tokens"],
+      "options": {
+        "jestConfig": "packages/shared/ui/foundation/tokens/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:ui", "scope:shared"]
+}

@@ -19,10 +19,13 @@
       "@desys/foundation-styles": [
         "packages/shared/ui/foundation/styles/src/index.ts"
       ],
+      "@desys/foundation-tokens": [
+        "packages/shared/ui/foundation/tokens/src/index.ts"
+      ],
       "@desys/react-components": [
         "packages/shared/ui/react/components/src/index.ts"
       ],
-      "@desys/shared/ui/custom/elements": [
+      "@desys/custom-elements": [
         "packages/shared/ui/custom/elements/src/index.ts"
       ]
     }

@@ -7,9 +7,9 @@ let inc = 0
   extends: 'button'
 })
 export class Button extends HTMLButtonElement {
-  bid = inc++
+  seq = inc++
 
   connectedCallback() {
-    console.log(`Button ${this.bid} connected`);
+    console.log(`Button ${this.seq} connected`);
   }
 }

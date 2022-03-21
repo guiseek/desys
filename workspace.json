@@ -6,6 +6,7 @@
     "shared-ui-custom-core": "packages/shared/ui/custom/core",
     "shared-ui-custom-elements": "packages/shared/ui/custom/elements",
     "shared-ui-foundation-styles": "packages/shared/ui/foundation/styles",
+    "shared-ui-foundation-tokens": "packages/shared/ui/foundation/tokens",
     "shared-ui-react-components": "packages/shared/ui/react/components",
     "ui-react-components-e2e": "namespaces/ui/react/components-e2e"
   }
