@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "account-data-base": "packages/account/data/base",
+    "account-domain": "packages/account/domain",
     "course-content": "namespaces/course/content",
     "course-content-e2e": "namespaces/course/content-e2e",
     "shared-ui-custom-core": "packages/shared/ui/custom/core",

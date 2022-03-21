@@ -1,0 +1,23 @@
+{
+  "root": "packages/account/data/base",
+  "sourceRoot": "packages/account/data/base/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/account/data/base/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/account/data/base"],
+      "options": {
+        "jestConfig": "packages/account/data/base/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:data", "scope:account"]
+}
