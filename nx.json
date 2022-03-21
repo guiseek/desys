@@ -26,6 +26,10 @@
       }
     }
   },
+  "workspaceLayout": {
+    "appsDir": "namespaces",
+    "libsDir": "packages"
+  },
   "targetDependencies": {
     "build": [
       {

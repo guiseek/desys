@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../../../../dist/out-tsc",
+    "declaration": true,
+    "lib": ["es2019", "dom", "dom.iterable"],
+    "types": []
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["**/*.spec.ts"]
+}

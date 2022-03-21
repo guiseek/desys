@@ -1,0 +1,33 @@
+{
+  "root": "packages/shared/ui/custom/core",
+  "sourceRoot": "packages/shared/ui/custom/core/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/shared/ui/custom/core",
+        "main": "packages/shared/ui/custom/core/src/index.ts",
+        "tsConfig": "packages/shared/ui/custom/core/tsconfig.lib.json",
+        "assets": ["packages/shared/ui/custom/core/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/shared/ui/custom/core/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/shared/ui/custom/core"],
+      "options": {
+        "jestConfig": "packages/shared/ui/custom/core/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["typee:ui", "scope:shared"]
+}
