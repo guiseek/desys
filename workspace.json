@@ -3,6 +3,7 @@
   "projects": {
     "account-data-base": "packages/account/data/base",
     "account-domain": "packages/account/domain",
+    "account-feature-user": "packages/account/feature/user",
     "course-content": "namespaces/course/content",
     "course-content-e2e": "namespaces/course/content-e2e",
     "shared-ui-custom-core": "packages/shared/ui/custom/core",

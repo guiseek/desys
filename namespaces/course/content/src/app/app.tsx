@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 import { Route, Link } from 'react-router-dom';
-import { Button } from '@desys/react-components';
+
+import { AccountFeatureUser } from '@desys/account/feature/user';
 
 const StyledApp = styled.div`
   // Your style here
@@ -27,13 +28,12 @@ export function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="/user">AccountFeatureUser</Link>
+          </li>
+          <li>
             <Link to="/page-2">Page 2</Link>
           </li>
         </ul>
-
-        <Button>Hey</Button>
-        <button is="ds-btn">Ho</button>
-        <button is="ds-btn">Lets Go</button>
       </div>
       <Route
         path="/"
@@ -45,6 +45,7 @@ export function App() {
           </div>
         )}
       />
+      <Route path="/user" component={AccountFeatureUser} />
       <Route
         path="/page-2"
         exact

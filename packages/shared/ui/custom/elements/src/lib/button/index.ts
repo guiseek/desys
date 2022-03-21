@@ -11,5 +11,6 @@ export class Button extends HTMLButtonElement {
 
   connectedCallback() {
     console.log(`Button ${this.seq} connected`);
+    this.onclick = console.log
   }
 }

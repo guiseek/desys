@@ -1,0 +1,25 @@
+{
+  "root": "packages/account/feature/user",
+  "sourceRoot": "packages/account/feature/user/src",
+  "projectType": "library",
+  "tags": ["type:feature", "scope:account"],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/account/feature/user/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/account/feature/user"],
+      "options": {
+        "jestConfig": "packages/account/feature/user/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

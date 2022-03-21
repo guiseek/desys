@@ -17,6 +17,9 @@
     "paths": {
       "@desys/account/data/base": ["packages/account/data/base/src/index.ts"],
       "@desys/account/domain": ["packages/account/domain/src/index.ts"],
+      "@desys/account/feature/user": [
+        "packages/account/feature/user/src/index.ts"
+      ],
       "@desys/custom-core": ["packages/shared/ui/custom/core/src/index.ts"],
       "@desys/custom-elements": [
         "packages/shared/ui/custom/elements/src/index.ts"
