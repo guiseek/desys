@@ -1,0 +1,73 @@
+{
+  "root": "namespaces/course/content",
+  "sourceRoot": "namespaces/course/content/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/namespaces/course/content",
+        "index": "namespaces/course/content/src/index.html",
+        "baseHref": "/",
+        "main": "namespaces/course/content/src/main.tsx",
+        "polyfills": "namespaces/course/content/src/polyfills.ts",
+        "tsConfig": "namespaces/course/content/tsconfig.app.json",
+        "assets": [
+          "namespaces/course/content/src/favicon.ico",
+          "namespaces/course/content/src/assets"
+        ],
+        "styles": ["namespaces/course/content/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "namespaces/course/content/src/environments/environment.ts",
+              "with": "namespaces/course/content/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "course-content:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "course-content:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["namespaces/course/content/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/namespaces/course/content"],
+      "options": {
+        "jestConfig": "namespaces/course/content/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:app", "scope:course"]
+}

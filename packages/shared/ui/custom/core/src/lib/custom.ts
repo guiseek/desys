@@ -5,10 +5,12 @@ export type CustomOptions<T> = {
   name: string
   html?: HTMLTemplateElement
   style?: HTMLStyleElement
-} & ShadowRootInit
+  mode?: ShadowRootInit['mode']
+  handler?: (element: T) => void
+}
 
 export function Custom<T>(options: CustomOptions<T>) {
-  const { name, html, style, mode } = options
+  const { name, html, style, mode = 'open' } = options
   return function <T extends CustomElementConstructor>(target: T) {
     const connected = target.prototype.connectedCallback ?? noop
 

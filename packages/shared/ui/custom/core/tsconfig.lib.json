@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "../../../../../dist/out-tsc",
     "declaration": true,
-    "lib": ["es2019", "dom", "dom.iterable"],
+    "target": "esnext",
+    "lib": ["esnext", "dom", "dom.iterable"],
     "types": []
   },
   "include": ["**/*.ts"],

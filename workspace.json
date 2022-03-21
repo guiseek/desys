@@ -1,6 +1,8 @@
 {
   "version": 2,
   "projects": {
+    "course-content": "namespaces/course/content",
+    "course-content-e2e": "namespaces/course/content-e2e",
     "shared-ui-custom-core": "packages/shared/ui/custom/core"
   }
 }

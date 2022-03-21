@@ -1,0 +1,28 @@
+{
+  "root": "namespaces/course/content-e2e",
+  "sourceRoot": "namespaces/course/content-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "namespaces/course/content-e2e/cypress.json",
+        "devServerTarget": "course-content:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "course-content:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["namespaces/course/content-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["course-content"]
+}
