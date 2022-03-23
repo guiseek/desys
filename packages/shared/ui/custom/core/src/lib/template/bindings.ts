@@ -34,7 +34,7 @@ export class TemplateBindings {
   set(name: string, value: any) {
     const boundNodes = this._map.get(name)
     if (boundNodes) {
-      for (let boundNode of boundNodes) {
+      for (const boundNode of boundNodes) {
         const { node } = boundNode
         if (node.nodeType === Node.TEXT_NODE) {
           node.textContent = value.toString()

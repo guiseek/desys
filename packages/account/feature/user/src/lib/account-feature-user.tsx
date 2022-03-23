@@ -2,34 +2,42 @@ import { Route, Link } from 'react-router-dom';
 
 import styled from 'styled-components';
 
-import { Button } from '@desys/react-components';
+import UserListContainer from './containers/user-list-container';
+import UserFormContainer from './containers/user-form-container';
 
 /* eslint-disable-next-line */
 export interface AccountFeatureUserProps {}
 
 const StyledAccountFeatureUser = styled.div`
-  color: pink;
 `;
 
 export function AccountFeatureUser(props: AccountFeatureUserProps) {
   return (
     <StyledAccountFeatureUser>
-      <h1>Welcome to AccountFeatureUser!</h1>
-
-      <ul>
-        <li>
-          <Link to="/">account-feature-user root</Link>
-        </li>
-      </ul>
-
-      <Button>Hey</Button>
-      <button is="ds-btn">Ho</button>
-      <button is="ds-btn">Lets Go</button>
-
       <Route
-        path="/"
-        render={() => <div>This is the account-feature-user root route.</div>}
+        path="/account/user"
+        render={() => (
+          <nav>
+            <ul>
+              <li>
+                <Link to="/account/user/form">User Form</Link>
+              </li>
+              <li>
+                <Link to="/account/user/list">User List</Link>
+              </li>
+            </ul>
+          </nav>
+        )}
       />
+
+      <header>
+        <h3>Welcome to AccountFeatureUser!</h3>
+      </header>
+
+      <section>
+        <Route path="/account/user/list" component={UserListContainer} />
+        <Route path="/account/user/form" render={() => <UserFormContainer />} />
+      </section>
     </StyledAccountFeatureUser>
   );
 }

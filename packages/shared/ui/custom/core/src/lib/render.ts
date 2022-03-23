@@ -13,7 +13,7 @@ export function html(strings: TemplateStringsArray, ...values: unknown[]) {
   return template
 }
 
-export function tmpl(strings: TemplateStringsArray, ...values: unknown[]) {
+export function tmpl(strings: TemplateStringsArray) {
   const template = document.createElement('template')
   template.innerHTML = strings.join('')
   return template

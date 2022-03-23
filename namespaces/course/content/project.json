@@ -15,6 +15,11 @@
         "main": "namespaces/course/content/src/main.tsx",
         "polyfills": "namespaces/course/content/src/polyfills.ts",
         "tsConfig": "namespaces/course/content/tsconfig.app.json",
+        "stylePreprocessorOptions": {
+          "includePaths": [
+            "packages/shared/ui"
+          ]
+        },
         "assets": [
           "namespaces/course/content/src/favicon.ico",
           "namespaces/course/content/src/assets"

@@ -17,6 +17,9 @@
     "paths": {
       "@desys/account/data/base": ["packages/account/data/base/src/index.ts"],
       "@desys/account/domain": ["packages/account/domain/src/index.ts"],
+      "@desys/account/feature/shell": [
+        "packages/account/feature/shell/src/index.ts"
+      ],
       "@desys/account/feature/user": [
         "packages/account/feature/user/src/index.ts"
       ],

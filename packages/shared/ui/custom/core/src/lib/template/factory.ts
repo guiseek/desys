@@ -63,7 +63,7 @@ export class TemplateBindingsFactory {
   applyTo(node: Node) {
     const bindingsMap = new Map<string, BoundNode[]>([])
 
-    for (let { name = '', path = [] } of this._textBindings) {
+    for (const { name = '', path = [] } of this._textBindings) {
       const nodeToBind = this.findNodeFromPath(node, path)
 
       nodeToBind.textContent = ''
@@ -77,7 +77,7 @@ export class TemplateBindingsFactory {
       })
     }
 
-    for (let binding of this._attributeBindings) {
+    for (const binding of this._attributeBindings) {
       const { names, attrName, path, eventName, isProperty } = binding
 
       const nodeToBind = this.findNodeFromPath(node, path)
@@ -126,7 +126,7 @@ export class TemplateBindingsFactory {
           values: new Map<string, string>(),
         }
 
-        for (let name of names) {
+        for (const name of names) {
           if (!bindingsMap.has(name)) {
             bindingsMap.set(name, [])
           }
@@ -151,7 +151,7 @@ export class TemplateBindingsFactory {
 
   findNodeFromPath(node: Node, path: number[]) {
     let result = node
-    for (let pathSegment of path) {
+    for (const pathSegment of path) {
       result = result.childNodes[pathSegment]
     }
     return result

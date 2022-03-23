@@ -16,7 +16,7 @@ export function Custom<T>(options: CustomOptions<T>) {
     const connected = target.prototype.connectedCallback ?? noop;
 
     target.prototype.connectedCallback = function () {
-      let shadow: ShadowRoot | HTMLElement = !options.extends
+      const shadow: ShadowRoot | HTMLElement = !options.extends
         ? (this.attachShadow({ mode }) as ShadowRoot)
         : (this as HTMLElement);
 

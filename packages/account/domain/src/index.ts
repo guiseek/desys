@@ -1,1 +1,1 @@
-export * from './lib/account-domain';
+export * from './lib/infrastructure/user.repository';

@@ -2,59 +2,51 @@ import styled from 'styled-components';
 
 import { Route, Link } from 'react-router-dom';
 
-import { AccountFeatureUser } from '@desys/account/feature/user';
+import { AccountFeatureShell } from '@desys/account/feature/shell';
 
 const StyledApp = styled.div`
-  // Your style here
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
-  background-color: #212121;
+  align-items: center;
 `;
 
 export function App() {
   return (
     <StyledApp>
-      {/* START: routes */}
-      {/* These routes and navigation have been generated for you */}
-      {/* Feel free to move and update them to fit your needs */}
-      <header>
+      <header className="container">
         <h1>Welcome course-content</h1>
       </header>
-      <div role="navigation">
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/user">AccountFeatureUser</Link>
-          </li>
-          <li>
-            <Link to="/page-2">Page 2</Link>
-          </li>
-        </ul>
-      </div>
-      <Route
-        path="/"
-        exact
-        render={() => (
-          <div>
-            This is the generated root route.{' '}
-            <Link to="/page-2">Click here for page 2.</Link>
-          </div>
-        )}
-      />
-      <Route path="/user" component={AccountFeatureUser} />
-      <Route
-        path="/page-2"
-        exact
-        render={() => (
-          <div>
-            <Link to="/">Click here to go back to root page.</Link>
-          </div>
-        )}
-      />
+
+      <main className="container">
+        <Route
+          path="/"
+          render={() => (
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+                <li>
+                  <Link to="/account">Account</Link>
+                </li>
+                <li>
+                  <Link to="/about">About</Link>
+                </li>
+              </ul>
+            </nav>
+          )}
+        />
+        <Route path="/account" component={AccountFeatureShell} />
+        <Route
+          path="/about"
+          exact
+          render={() => (
+            <div>
+              <Link to="/">Click here to go back to root page.</Link>
+            </div>
+          )}
+        />
+      </main>
       {/* END: routes */}
     </StyledApp>
   );
